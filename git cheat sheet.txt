@@ -1,0 +1,26 @@
+How do I delete a local branch in Git?
+$ git branch -d <local-branch>
+
+How do I delete a remote branch in Git?
+$ git push origin --delete <remote-branch-name>
+
+Force deletion of the branch, even if it contains unmerged / unpushed commits
+$ git branch -D <local-branch>
+
+Fix committing to the wrong Git branch but not push yet.
+$ git reset --soft HEAD^
+$ git checkout branch
+$ git commit -m "Message"
+
+git undo all uncommitted or unsaved changes
+This will unstage all files you might have staged with git add:
+$ git reset
+
+This will revert all local uncommitted changes (should be executed in repo root):
+$git checkout .
+
+You can also revert uncommitted changes only to particular file or directory:
+$ git checkout [some_dir|file.txt]
+
+Yet another way to revert all uncommitted changes (longer to type, but works from any subdirectory):
+$ git reset --hard HEAD
