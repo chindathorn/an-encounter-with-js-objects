@@ -184,10 +184,19 @@ function Ball() {
 }
 
 // Pure Functions
+
 let x = 0;
+// not take x but affect to x
 const impure = () => {
   x++;
-  return x ** 2;
+  return x+1 ** 3;
 }
 
-const pure = (x) => 
+// not affect to x by take x as param
+const pure = (x) => x ** 2;
+
+const a = impure()
+// const a = 0
+const b = pure(2)
+// const b = 0
+console.log(`x=${x}, a=${a}, b=${b}`)
