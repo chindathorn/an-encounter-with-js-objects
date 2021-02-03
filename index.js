@@ -146,3 +146,48 @@ function Zombie(name) {
 
 const j = new Zombie("😵 Brad");
 console.log(j.eatBrain());
+
+// immediately invoked function expression or IIFE
+(function () {
+  const x = 21;
+}) (); // Groovy is dog balls
+
+// Handle multiple params by make it as an object or call Name params
+function makeLuch(opts) {
+  const { main, side, drink } = opts;
+  return `Lunch includes ${main}, ${side}, ...`;
+}
+makeLunch({ main: '🥗', side: '🥩', drink: '🍼' });
+
+// or
+function makeDinner(...args) {
+  return `Dinner includes the following items: ${args.join(',')}`;
+}
+makeDinner('🍜🥧', '🥤', '🍷', '🍉', '🥬', '🧄', '🍅');
+
+// Arrow function is alway as expression
+const makeWine = (qty) => '🍳'.repeat(qty);
+
+// ES5 Arrow 'this'
+function Ball() {
+  var self = this;
+  this.kick = 'Football ⚽';
+  setTimeout(function () {
+    console.log(this.kick); // undefined
+    console.log(self.kick); // need to use self
+  }, 0);
+  
+  // with Arrow
+  setTimeout(() => {
+    console.log(this.kick); // work
+  }, 0);
+}
+
+// Pure Functions
+let x = 0;
+const impure = () => {
+  x++;
+  return x ** 2;
+}
+
+const pure = (x) => 
