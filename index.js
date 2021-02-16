@@ -186,13 +186,25 @@ function Ball() {
 // Pure Functions
 
 let x = 0;
+// ex1
+var value = 5;
+function impure(arg) {
+    return value + 2 + 3;
+}
+// ex2
 // not take x but affect to x
 const impure = () => {
   x++;
   return x+1 ** 3;
 }
 
+
 // not affect to x by take x as param
+// ex1
+function sumOfNumbers(a, b) {
+ return a + b;
+}
+// ex2
 const pure = (x) => x ** 2;
 
 const a = impure()
