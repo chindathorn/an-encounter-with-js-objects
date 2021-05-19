@@ -46,7 +46,7 @@ const hasInexpensiveItems = items.some(item => {
 console.log(hasInexpensiveItems)
 
 
-// check every single item
+// check every single item and return new array
 const hasExpensiveItems = item.every(item => {
     return item.price <= 1000
 })
