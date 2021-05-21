@@ -9,11 +9,15 @@ console.log("1------------------------------------------");
 // Object creation
 const obj = {
   burger: "🍔",
-  size: 12
+  size: 12,
+  subObj: {
+    subProp: "trick", 
+  }
 };
 
 // set property to object created
 obj["whoami"] = "🤷‍♀️";
+obj["subObj"]["subProp"] = "do trick";
 
 // read or get property
 console.log(obj["burger"]);
